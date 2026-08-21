@@ -28,6 +28,12 @@ The static site is written to `dist/`.
 
 Hosted on Alibaba Cloud ESA Pages. Staging is the default publish target; production is bound to `photos.jqknono.com`.
 
+```sh
+npm run build
+esa-cli commit --name photos-downloader --assets dist --description "docs site" --no-bundle
+esa-cli deploy --name photos-downloader --environment staging --no-bundle
+```
+
 ## License
 
 MIT

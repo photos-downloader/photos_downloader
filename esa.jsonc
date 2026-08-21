@@ -1,0 +1,10 @@
+{
+  "name": "photos-downloader",
+  "description": "Public website and user guides for Photos Downloader",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "assets": {
+    "directory": "./dist",
+    "notFoundStrategy": "404Page"
+  }
+}
