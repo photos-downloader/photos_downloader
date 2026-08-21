@@ -1,49 +1,33 @@
-# Starlight Starter Kit: Basics
+# Photos Downloader
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+Public website and user guides for [Photos Downloader](https://photos.jqknono.com): unofficial tools that download photos and videos from iCloud, HUAWEI, Xiaomi, vivo, OPPO, and HONOR cloud galleries.
 
-```
-npm create astro@latest -- --template starlight
-```
+This repository does **not** currently publish CLI/GUI source or release binaries. Download pages are placeholders until GitHub Releases are available.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Local development
 
-## 🚀 Project Structure
-
-Inside of your Astro + Starlight project, you'll see the following folders and files:
-
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+```sh
+npm install
+npm run dev
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+Production build:
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+```sh
+npm run build
+```
 
-Static assets, like favicons, can be placed in the `public/` directory.
+The static site is written to `dist/`.
 
-## 🧞 Commands
+## Locales
 
-All commands are run from the root of the project, from a terminal:
+- Chinese (default): `/`
+- English: `/en/`
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Deploy
 
-## 👀 Want to learn more?
+Hosted on Alibaba Cloud ESA Pages. Staging is the default publish target; production is bound to `photos.jqknono.com`.
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+## License
+
+MIT

@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+	--sl-font: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+	--sl-font-mono: 'JetBrains Mono', ui-monospace, monospace;
+	--pd-icloud: #007aff;
+	--pd-huawei: #e53935;
+	--pd-xiaomi: #ff6900;
+	--pd-vivo: #2196f3;
+	--pd-oppo: #4caf50;
+	--pd-honor: #00a7b5;
+	--pd-ready: #22c55e;
+	--pd-wip: #f59e0b;
+}
+
+:root[data-theme='dark'] {
+	--sl-color-bg: #0f172a;
+	--sl-color-bg-nav: #0b1220;
+	--sl-color-bg-sidebar: #0b1220;
+	--sl-color-hairline: #334155;
+	--sl-color-accent-low: #1e3a5f;
+	--sl-color-accent: #3b82f6;
+	--sl-color-accent-high: #93c5fd;
+	--sl-color-text: #f8fafc;
+	--sl-color-text-accent: #93c5fd;
+}
+
+:root[data-theme='light'] {
+	--sl-color-accent: #2563eb;
+	--sl-color-accent-high: #1d4ed8;
+	--sl-color-text: #0f172a;
+}
+
+.vendor-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+	gap: 1rem;
+	margin: 1.5rem 0 2.5rem;
+}
+
+.vendor-card {
+	display: block;
+	padding: 1rem 1.1rem;
+	border: 1px solid var(--sl-color-hairline-light, #334155);
+	border-radius: 0.75rem;
+	background: color-mix(in srgb, var(--sl-color-bg-nav) 86%, transparent);
+	text-decoration: none;
+	color: inherit;
+	transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.vendor-card:hover,
+.vendor-card:focus-visible {
+	border-color: var(--vendor-color, var(--sl-color-accent));
+	transform: translateY(-1px);
+}
+
+.vendor-card .name {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+	font-weight: 600;
+}
+
+.vendor-card .swatch {
+	width: 0.7rem;
+	height: 0.7rem;
+	border-radius: 999px;
+	background: var(--vendor-color);
+}
+
+.vendor-card .meta {
+	margin: 0.45rem 0 0;
+	color: var(--sl-color-gray-3);
+	font-size: 0.9rem;
+}
+
+.badge {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.1rem 0.5rem;
+	border-radius: 999px;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+}
+
+.badge.ready {
+	color: #052e16;
+	background: var(--pd-ready);
+}
+
+.badge.wip {
+	color: #422006;
+	background: var(--pd-wip);
+}
+
+.platform-table code {
+	font-size: 0.85em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.vendor-card {
+		transition: none;
+	}
+}

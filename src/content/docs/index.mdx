@@ -1,40 +1,65 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: Photos Downloader
+description: 非官方多厂商云相册下载器。把 iCloud、华为、小米、vivo、OPPO、荣耀图库备份到本地。
+template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
-  image:
-    file: ../../assets/houston.webp
+  tagline: 把云相册备份到你自己的磁盘。第一期先提供使用指南，二进制即将发布。
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: 使用指南
+      link: /getting-started/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
+    - text: 下载（即将发布）
+      link: /download/
+      icon: download
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, Aside } from '@astrojs/starlight/components';
 
-## Next steps
+<Aside type="caution" title="非官方工具">
+Photos Downloader 不是 Apple、华为、小米、vivo、OPPO 或荣耀的官方产品。请勿把密码、cookie、session 或带签名的媒体 URL 提交到 GitHub。
+</Aside>
 
-<CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+<div class="vendor-grid">
+  <a class="vendor-card" href="/guides/icloud/" style="--vendor-color: var(--pd-icloud)">
+    <div class="name">iCloud <span class="badge ready">可用</span></div>
+    <p class="meta">SRP + 2FA，Copy / Sync / Move，支持中国区 <code>--domain cn</code>。</p>
+  </a>
+  <a class="vendor-card" href="/guides/huawei/" style="--vendor-color: var(--pd-huawei)">
+    <div class="name">HUAWEI Cloud <span class="badge ready">可用</span></div>
+    <p class="meta">浏览器导出 <code>cookies.json</code> 后下载云相册。</p>
+  </a>
+  <a class="vendor-card" href="/guides/xiaomi/" style="--vendor-color: var(--pd-xiaomi)">
+    <div class="name">Xiaomi Cloud <span class="badge wip">开发中</span></div>
+    <p class="meta">协议对接进行中，当前不可用。</p>
+  </a>
+  <a class="vendor-card" href="/guides/vivo/" style="--vendor-color: var(--pd-vivo)">
+    <div class="name">vivo Cloud <span class="badge wip">开发中</span></div>
+    <p class="meta">协议对接进行中，当前不可用。</p>
+  </a>
+  <a class="vendor-card" href="/guides/oppo/" style="--vendor-color: var(--pd-oppo)">
+    <div class="name">OPPO Cloud <span class="badge wip">开发中</span></div>
+    <p class="meta">协议对接进行中，当前不可用。</p>
+  </a>
+  <a class="vendor-card" href="/guides/honor/" style="--vendor-color: var(--pd-honor)">
+    <div class="name">HONOR Cloud <span class="badge wip">开发中</span></div>
+    <p class="meta">Gallery API 未验证前不会发真实请求。</p>
+  </a>
+</div>
+
+## 现在能做什么
+
+<CardGrid>
+<Card title="阅读指南" icon="open-book">
+iCloud 与华为云相册的认证、过滤和三种运行模式已整理成文档。
+</Card>
+<Card title="即将发布二进制" icon="download">
+计划覆盖 Windows / Linux / macOS 的 x64 与 arm64。当前没有可下载的安装包。
+</Card>
+<Card title="图形界面" icon="puzzle">
+Flutter GUI 会聚合各厂商下载器。安装包同样尚未发布。
+</Card>
+<Card title="安全边界" icon="warning">
+不要提交 cookie 或账号。破坏性删除请先 <code>--dry-run</code>。
+</Card>
 </CardGrid>

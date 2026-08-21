@@ -1,7 +1,15 @@
 {
-  "name": "photos_downloader_site",
+  "name": "photos_downloader",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Public website and user guides for Photos Downloader",
+  "homepage": "https://photos.jqknono.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/photos-downloader/photos_downloader"
+  },
+  "license": "MIT",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
