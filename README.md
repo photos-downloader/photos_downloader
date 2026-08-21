@@ -26,13 +26,17 @@ The static site is written to `dist/`.
 
 ## Deploy
 
-Hosted on Alibaba Cloud ESA Pages. Staging is the default publish target; production will be bound to `photos.jqknono.com` after an explicit production deploy.
+Hosted on Alibaba Cloud ESA Pages. Public site: [https://photos.jqknono.com](https://photos.jqknono.com). Staging remains available for preview; production currently serves version `1787312867101583990`.
 
 ```sh
 npm run build
 esa-cli commit --name photos-downloader --assets dist --description "docs site" --no-bundle
 esa-cli deploy --name photos-downloader --environment staging --no-bundle
+esa-cli deploy --name photos-downloader --environment production --version <version>
+esa-cli domain add photos.jqknono.com
 ```
+
+Public DNS for `photos.jqknono.com` is a CNAME to the ESA record `photos.jqknono.com.a1.initbb.com`.
 
 ## License
 
