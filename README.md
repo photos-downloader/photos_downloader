@@ -26,7 +26,7 @@ The static site is written to `dist/`.
 
 ## Deploy
 
-Hosted on Alibaba Cloud ESA Pages. Staging is the default publish target; production is bound to `photos.jqknono.com`.
+Hosted on Alibaba Cloud ESA Pages. Staging is the default publish target; production will be bound to `photos.jqknono.com` after an explicit production deploy.
 
 ```sh
 npm run build
