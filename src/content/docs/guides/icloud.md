@@ -27,13 +27,12 @@ icloud-photos-downloader --domain cn --auth-only
 
 中国区账号使用 `--domain cn`。不要使用 app-specific password。
 
-## 三种模式
+## 两种模式
 
 | 模式 | 行为 | 参数 |
 | --- | --- | --- |
-| Copy（默认） | 只下载本地没有的文件 | 无额外参数 |
-| Sync | 下载后，删除本地已进入「最近删除」的文件 | `--auto-delete` |
-| Move | 下载后从 iCloud 删除（可保留最近 N 天） | `--keep-icloud-recent-days N` |
+| 仅下载（默认） | 只下载本地没有的文件 | 无额外参数 |
+| 下载并删除云原件 | 下载成功后从 iCloud 删除（可保留最近 N 天） | `--keep-icloud-recent-days N` |
 
 破坏性操作先加 `--dry-run`。
 
@@ -45,7 +44,6 @@ icloud-photos-downloader --list-libraries
 icloud-photos-downloader --list-albums
 icloud-photos-downloader --album Favorites --directory /photos
 icloud-photos-downloader --recent 5 --dry-run --directory ./tmp-icloud --folder-structure none
-icloud-photos-downloader --auto-delete --directory /photos --dry-run
 icloud-photos-downloader --keep-icloud-recent-days 0 --directory /photos --dry-run
 icloud-photos-downloader --watch-with-interval 3600 --directory /photos
 icloud-photos-downloader --skip-created-before 2020-01-01 --directory /photos

@@ -19,7 +19,7 @@ Issue 和 PR 里只使用脱敏后的协议轨迹。HONOR 提供方在 API 验�
 
 ## 破坏性操作
 
-iCloud 的 Sync（`--auto-delete`）和 Move（`--keep-icloud-recent-days`）会删除本地或云端文件。先 `--dry-run`，并用隔离目录或隔离相册验证。
+“下载并删除云原件”（`--keep-icloud-recent-days`）会删除云端文件。先 `--dry-run`，并用隔离目录或隔离相册验证。
 
 ## 会话文件
 

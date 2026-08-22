@@ -31,9 +31,8 @@ China accounts use `--domain cn`. Do not use an app-specific password.
 
 | Mode | Behavior | Flag |
 | --- | --- | --- |
-| Copy (default) | Download files that are not already local | none |
-| Sync | Also delete local files that moved to Recently Deleted | `--auto-delete` |
-| Move | After download, delete from iCloud (optionally keep recent N days) | `--keep-icloud-recent-days N` |
+| Download only (default) | Download files that are not already local | none |
+| Download and delete from cloud | After a successful download, delete from iCloud (optionally keep recent N days) | `--keep-icloud-recent-days N` |
 
 Always add `--dry-run` before destructive runs.
 
@@ -45,7 +44,6 @@ icloud-photos-downloader --list-libraries
 icloud-photos-downloader --list-albums
 icloud-photos-downloader --album Favorites --directory /photos
 icloud-photos-downloader --recent 5 --dry-run --directory ./tmp-icloud --folder-structure none
-icloud-photos-downloader --auto-delete --directory /photos --dry-run
 icloud-photos-downloader --keep-icloud-recent-days 0 --directory /photos --dry-run
 icloud-photos-downloader --watch-with-interval 3600 --directory /photos
 icloud-photos-downloader --skip-created-before 2020-01-01 --directory /photos

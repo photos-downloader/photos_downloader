@@ -12,7 +12,7 @@ The Photos Downloader GUI is a Flutter app that calls vendor downloaders over Ru
 3. Choose a local download directory.
 4. iCloud: enter an Apple ID and complete 2FA. Sessions default to `~/.photos_downloader/icloud/`.
 5. HUAWEI: select a browser-exported `cookies.json`.
-6. Optional: Copy / Sync / Move, `--recent`, skip videos, dry-run.
+6. Choose download only or download and delete from cloud, then set `--recent`, skip videos, and dry-run.
 7. Start the download and watch progress.
 
 The GUI does not upload passwords or cookies to Photos Downloader servers; authentication goes only to the vendor cloud.

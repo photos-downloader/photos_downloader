@@ -17,7 +17,7 @@ Photos Downloader 是一套非官方工具，用于把云相册里的照片和�
 
 | 厂商 | 状态 | 认证方式 | 说明 |
 | --- | --- | --- | --- |
-| iCloud | 可用 | Apple ID + 2FA | 对等移植 icloudpd 语义：Copy / Sync / Move |
+| iCloud | 可用 | Apple ID + 2FA | 支持仅下载，以及下载并删除云原件 |
 | HUAWEI | 可用 | 浏览器 cookie | 需要自行导出 `cookies.json` |
 | Xiaomi | 开发中 | 待定 | 尚不可用 |
 | vivo | 开发中 | 待定 | 尚不可用 |

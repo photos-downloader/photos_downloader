@@ -17,7 +17,7 @@ This first public release is the website and user guides. CLI / GUI source and p
 
 | Vendor | Status | Auth | Notes |
 | --- | --- | --- | --- |
-| iCloud | Ready | Apple ID + 2FA | icloudpd-compatible Copy / Sync / Move |
+| iCloud | Ready | Apple ID + 2FA | Download only and download-and-delete-cloud modes |
 | HUAWEI | Ready | Browser cookies | Export `cookies.json` yourself |
 | Xiaomi | WIP | TBD | Not usable |
 | vivo | WIP | TBD | Not usable |

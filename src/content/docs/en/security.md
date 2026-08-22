@@ -19,7 +19,7 @@ Issues and PRs should only include sanitized protocol traces. The HONOR provider
 
 ## Destructive operations
 
-iCloud Sync (`--auto-delete`) and Move (`--keep-icloud-recent-days`) delete local or cloud files. Use `--dry-run` first, with an isolated directory or album.
+Download and delete from cloud (`--keep-icloud-recent-days`) deletes cloud files. Use `--dry-run` first, with an isolated directory or album.
 
 ## Session files
 

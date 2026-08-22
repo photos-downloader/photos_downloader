@@ -6,7 +6,7 @@ description: Vendor implementation progress and what comes after the documentati
 ## Now
 
 - The documentation site is public: this repository.
-- iCloud CLI: authentication, listing, Copy, plus Sync / Move flags.
+- iCloud CLI: authentication, listing, download-only, and download-and-delete-cloud flags.
 - HUAWEI CLI: cloud album download from browser cookies.
 - Xiaomi / vivo / OPPO: scaffolds only.
 - HONOR: accepts cookies but sends no live requests until the Gallery API is verified.

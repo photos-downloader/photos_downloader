@@ -6,7 +6,7 @@ description: 各厂商实现进度，以及文档站、二进制发布的下一�
 ## 当前
 
 - 文档站已开源：本仓库。
-- iCloud CLI：认证、列表、Copy，以及 Sync / Move 相关参数已接通。
+- iCloud CLI：认证、列表、仅下载，以及下载并删除云原件参数已接通。
 - 华为 CLI：基于浏览器 cookie 的云相册下载。
 - Xiaomi / vivo / OPPO：脚手架，尚不可用。
 - HONOR：接受 cookie，但在 Gallery API 合同验证前不会发真实请求。
