@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "Public website and user guides for Photos Downloader",
-  "homepage": "https://photos.jqknono.com",
+  "homepage": "https://photos-downloader.jqknono.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/photos-downloader/photos_downloader"

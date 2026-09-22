@@ -44,7 +44,7 @@ const sidebar = [
 ];
 
 export default defineConfig({
-	site: 'https://photos.jqknono.com',
+	site: 'https://photos-downloader.jqknono.com',
 	integrations: [
 		starlight({
 			title: {
