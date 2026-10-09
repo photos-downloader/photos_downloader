@@ -2,7 +2,12 @@
 
 Public website and user guides for [Photos Downloader](https://photos-downloader.jqknono.com): unofficial tools that download photos and videos from iCloud, HUAWEI, Xiaomi, vivo, OPPO, and HONOR cloud galleries.
 
-This repository does **not** currently publish CLI/GUI source or release binaries. Download pages are placeholders until GitHub Releases are available.
+CLI and GUI source live in sibling repositories:
+
+- [`photos_downloader_core`](https://github.com/photos-downloader/photos_downloader_core) — shared Dart core + vendor packages (Melos monorepo)
+- [`photos_downloader_gui`](https://github.com/photos-downloader/photos_downloader_gui) — Flutter desktop GUI
+
+This repository hosts the public website and guides only. Download pages remain placeholders until GitHub Releases ship installers.
 
 ## Local development
 

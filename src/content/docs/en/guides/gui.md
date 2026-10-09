@@ -1,18 +1,14 @@
 ---
 title: GUI
-description: How the Flutter GUI will select a vendor and start a download. No installer is published yet.
+description: Use the Flutter UI to pick a vendor and download.
 ---
 
-The Photos Downloader GUI is a Flutter app that calls vendor downloaders over Rust FFI. **No installer is published yet.**
+The Photos Downloader GUI is a Flutter app that depends directly on the Dart vendor packages in [`photos_downloader_core`](https://github.com/photos-downloader/photos_downloader_core). **No installer is published yet**; follow [Build from source](/en/install/) to run locally.
 
-## Expected flow
+## Capabilities
 
-1. Open the app and pick a vendor card.
-2. Only **iCloud** and **HUAWEI Cloud** are marked ready; the rest are in development.
-3. Choose a local download directory.
-4. iCloud: enter an Apple ID and complete 2FA. Sessions default to `~/.photos_downloader/icloud/`.
-5. HUAWEI: select a browser-exported `cookies.json`.
-6. Choose download only or download and delete from cloud, then set `--recent`, skip videos, and dry-run.
-7. Start the download and watch progress.
+- Multi-vendor account management (iCloud / HUAWEI / Xiaomi / vivo / OPPO / HONOR)
+- Listing, filtering, and download progress
+- iCloud session auth and optional post-download cloud deletion when supported
 
-The GUI does not upload passwords or cookies to Photos Downloader servers; authentication goes only to the vendor cloud.
+Vendor-specific options follow the in-app controls and the matching CLI docs.

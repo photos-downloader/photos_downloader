@@ -7,7 +7,7 @@ Photos Downloader is an unofficial toolkit for downloading photos and videos fro
 
 It consists of:
 
-- Per-vendor CLIs (Rust)
+- Per-vendor CLIs (Dart; see photos_downloader_core)
 - A shared `CloudDownloader` core
 - A Flutter GUI that aggregates the vendors
 

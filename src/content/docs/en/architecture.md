@@ -1,30 +1,26 @@
 ---
 title: Architecture
-description: Flutter GUI, Rust FFI bridge, vendor crates, and the shared CloudDownloader core.
+description: Flutter GUI, Dart vendor monorepo, and the shared CloudDownloader core.
 ---
 
-Photos Downloader has four layers. This first public release ships only the website; crates remain private.
+Photos Downloader has three public repositories. This first public release ships the website; CLI/GUI installers are still in progress.
 
 ```mermaid
 flowchart LR
     GUI["Flutter GUI"]
-    BRIDGE["Rust FFI bridge"]
-    VENDORS["Vendor crates · CLI + lib"]
-    CORE["CloudDownloader trait"]
+    VENDORS["Vendor Dart packages · CLI + lib"]
+    CORE["photos_downloader_share"]
 
-    GUI -.->|flutter_rust_bridge| BRIDGE
-    BRIDGE --> VENDORS
+    GUI --> VENDORS
     VENDORS --> CORE
 ```
 
 | Layer | Component | Role |
 | --- | --- | --- |
-| GUI | `photos_downloader_gui` | Flutter app: pick a vendor and show progress |
-| Shared Dart | `photos_downloader_share` | Pure Dart models |
-| FFI | `photos_downloader_bridge` | Aggregates every vendor crate |
-| Vendors | `icloud_*` / `huawei_*` / … | Per-vendor CLI + library |
-| Core | `photos_downloader_core` | `CloudDownloader` trait, progress, errors |
+| GUI | [`photos_downloader_gui`](https://github.com/photos-downloader/photos_downloader_gui) | Flutter app: pick a vendor and show progress |
+| Vendors + shared | [`photos_downloader_core`](https://github.com/photos-downloader/photos_downloader_core) Melos monorepo | `photos_downloader_share` plus per-vendor Dart libraries/CLIs |
+| Docs | this `photos_downloader` repo | User guides and status |
 
-HTTP uses `reqwest` with `rustls` (no system OpenSSL).
+Every vendor implements the `CloudDownloader` interface. The GUI calls Dart packages directly (path or git dependencies); there is no Rust FFI bridge.
 
 Public discussion and documentation PRs go to [photos-downloader/photos_downloader](https://github.com/photos-downloader/photos_downloader).

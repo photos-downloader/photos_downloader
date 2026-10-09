@@ -7,7 +7,7 @@ Photos Downloader 是一套非官方工具，用于把云相册里的照片和�
 
 它包含：
 
-- 各厂商独立 CLI（Rust）
+- 各厂商独立 CLI（Dart，见 photos_downloader_core）
 - 共享核心 `CloudDownloader`
 - Flutter 图形界面（聚合层）
 

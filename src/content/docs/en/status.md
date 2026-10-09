@@ -1,26 +1,16 @@
 ---
 title: Status
-description: Vendor implementation progress and what comes after the documentation site.
+description: Current release scope and next steps.
 ---
 
-## Now
+## Available now
 
-- The documentation site is public: this repository.
-- iCloud CLI: authentication, listing, download-only, and download-and-delete-cloud flags.
-- HUAWEI CLI: cloud album download from browser cookies.
-- Xiaomi / vivo / OPPO: scaffolds only.
-- HONOR: accepts cookies but sends no live requests until the Gallery API is verified.
-- GUI: Flutter + Rust FFI exists privately; no installer is published.
+- This documentation site is public.
+- Core and vendor implementations live in the Dart monorepo [`photos_downloader_core`](https://github.com/photos-downloader/photos_downloader_core).
+- GUI: Flutter app [`photos_downloader_gui`](https://github.com/photos-downloader/photos_downloader_gui); no installer is published yet.
 
 ## Next
 
-1. Publish Windows / Linux / macOS (x64 + arm64) binaries for ready CLIs.
-2. Wire this site's download page to GitHub Releases.
-3. Finish remaining vendor protocols before documenting them as ready.
-4. Open-source crates and the GUI when appropriate.
-
-## Out of scope
-
-- iCloud Advanced Data Protection (ADP) and FIDO.
-- Storing passwords, cookies, sessions, or signed URLs in the repo or issues.
-- Treating the Flutter web debug server as the public website.
+1. Harden vendor CLIs and GUI usability.
+2. Publish installers via GitHub Releases.
+3. Expand open-source scope and contribution flow when appropriate.

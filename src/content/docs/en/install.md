@@ -1,34 +1,44 @@
 ---
-title: Install
-description: What installation will look like once binaries ship, and why source builds are unavailable here.
+title: Build from source
+description: Recommended sibling checkout for core and GUI.
 ---
 
-## Prebuilt packages (coming soon)
-
-1. Grab the archive for your platform from [Download](/en/download/).
-2. Check the checksums published with the release.
-3. Extract and put the binary on your `PATH`, or run it in place.
-
-Windows:
-
-```powershell
-icloud-photos-downloader.exe --help
-huawei-photos-downloader.exe --help
-```
-
-Unix:
+Clone the three repositories as siblings under one parent directory:
 
 ```sh
-chmod +x icloud-photos-downloader
-./icloud-photos-downloader --help
+mkdir -p photos_downloader-org && cd photos_downloader-org
+git clone https://github.com/photos-downloader/photos_downloader_core.git
+git clone https://github.com/photos-downloader/photos_downloader_gui.git
+git clone https://github.com/photos-downloader/photos_downloader.git   # optional docs site
 ```
 
-## Build from source
+### Core (vendor CLIs + shared library)
 
-Vendor crates and the Flutter GUI are **not** in this public repository. You cannot `cargo build` or `flutter build` from this site repo today.
+Requires Dart SDK `>=3.3.0`.
 
-## Config
+```sh
+cd photos_downloader_core
+dart pub get
+dart pub global activate melos
+melos bootstrap
+melos run analyze
+```
 
-- iCloud: a working-directory `.env` (never commit it). See the [iCloud guide](/en/guides/icloud/).
-- HUAWEI: a browser-exported `cookies.json`. See the [HUAWEI guide](/en/guides/huawei/).
-- Default session directory: `~/.photos_downloader/` (`%USERPROFILE%\.photos_downloader\` on Windows).
+Run one vendor CLI:
+
+```sh
+cd packages/icloud_photos_downloader
+dart run bin/icloud_photos_downloader.dart --help
+```
+
+### GUI
+
+Requires Flutter `>=3.10`.
+
+```sh
+cd photos_downloader_gui
+flutter pub get
+flutter run -d windows   # or macos / linux
+```
+
+This docs repository does not ship installers. When binaries are published they will appear on [GitHub Releases](https://github.com/photos-downloader/photos_downloader/releases).

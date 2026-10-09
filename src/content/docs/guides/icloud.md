@@ -1,9 +1,9 @@
 ---
 title: iCloud
-description: 使用 icloud-photos-downloader 认证、列出并下载 iCloud 照片。
+description: 使用 icloud_photos_downloader 认证、列出并下载 iCloud 照片。
 ---
 
-`icloud-photos-downloader` 是纯 Rust CLI，语义对齐 [icloudpd](https://github.com/icloud-photos-downloader/icloud_photos_downloader)。二进制尚未随本站发布。
+`icloud_photos_downloader` 是 Dart library/CLI，位于 monorepo [`photos_downloader_core`](https://github.com/photos-downloader/photos_downloader_core) 的 `packages/icloud_photos_downloader`。语义参考 [icloudpd](https://github.com/icloud-photos-downloader/icloud_photos_downloader)。预编译二进制尚未随本站发布。
 
 ## 账号前提
 
@@ -19,10 +19,11 @@ ADP 与 FIDO 不受支持。
 首次登录需要 Apple ID 密码和 2FA（设备推送或短信）。成功后 session 会写到 `~/.photos_downloader/icloud/`（Windows 为 `%USERPROFILE%\.photos_downloader\icloud\`）。
 
 ```sh
-icloud-photos-downloader --auth-only
-icloud-photos-downloader --username you@example.com --auth-only
-icloud-photos-downloader --mfa-method device --auth-only
-icloud-photos-downloader --domain cn --auth-only
+cd photos_downloader_core/packages/icloud_photos_downloader
+dart run bin/icloud_photos_downloader.dart --auth-only
+dart run bin/icloud_photos_downloader.dart --username you@example.com --auth-only
+dart run bin/icloud_photos_downloader.dart --mfa-method device --auth-only
+dart run bin/icloud_photos_downloader.dart --domain cn --auth-only
 ```
 
 中国区账号使用 `--domain cn`。不要使用 app-specific password。
@@ -39,17 +40,17 @@ icloud-photos-downloader --domain cn --auth-only
 ## 常用命令
 
 ```sh
-icloud-photos-downloader --directory /photos --recent 10
-icloud-photos-downloader --list-libraries
-icloud-photos-downloader --list-albums
-icloud-photos-downloader --album Favorites --directory /photos
-icloud-photos-downloader --recent 5 --dry-run --directory ./tmp-icloud --folder-structure none
-icloud-photos-downloader --keep-icloud-recent-days 0 --directory /photos --dry-run
-icloud-photos-downloader --watch-with-interval 3600 --directory /photos
-icloud-photos-downloader --skip-created-before 2020-01-01 --directory /photos
+dart run bin/icloud_photos_downloader.dart --directory /photos --recent 10
+dart run bin/icloud_photos_downloader.dart --list-libraries
+dart run bin/icloud_photos_downloader.dart --list-albums
+dart run bin/icloud_photos_downloader.dart --album Favorites --directory /photos
+dart run bin/icloud_photos_downloader.dart --recent 5 --dry-run --directory ./tmp-icloud --folder-structure none
+dart run bin/icloud_photos_downloader.dart --keep-icloud-recent-days 0 --directory /photos --dry-run
 ```
 
 默认目录结构是 `{:%Y/%m/%d}`。`--folder-structure none` 会平铺到目标目录。
+
+部分旧版 CLI 能力（watch、通知、RAW 对齐等）仍在移植中，详见 core 包内 `docs/porting-plan.md`。
 
 ## 配置文件
 
